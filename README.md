@@ -1,6 +1,6 @@
-#Coming Soon
+# Coming Soon
 
 
 
-#Helpful Gits
+# Helpful Gits
 https://github.com/SAP/macOS-enterprise-privileges
