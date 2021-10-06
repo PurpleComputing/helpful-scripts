@@ -4,6 +4,7 @@ user=$('whoami');
 
 echo Command: WindowStyle: Activate >> /var/tmp/depnotify.log
 echo Command: WindowTitle: Create a Support Ticket >> /var/tmp/depnotify.log
+echo Command: MainTitle: Create a Support Ticket >> /var/tmp/depnotify.log
 echo 'Command: Image: /Library/Application Support/Purple/logo.png' >> /var/tmp/depnotify.log
 echo Command: MainText: In a few moments our support ticket form will load, please complete the form and provide as much information as possible. Whilst you are completing the form your Mac will upload diagnostic information to our Help Desk. >> /var/tmp/depnotify.log
 echo Status: Loading form... Thank you. >> /var/tmp/depnotify.log
