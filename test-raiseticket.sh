@@ -12,6 +12,7 @@ echo Command: WindowTitle: Create a Support Ticket >> /var/tmp/depnotify.log
 echo Command: Website: https://www.cognitoforms.com/PurpleComputingLimited/SupportRequestForm >> /var/tmp/depnotify.log
 echo Command: ContinueButton: Finished >> /var/tmp/depnotify.log
 echo Command: DeterminateManual: 7 >> /var/tmp/depnotify.log
+#echo Command: Command: NotificationOn: >> /var/tmp/depnotify.log
 
 # START DEPNOTIFY
 curl -o /Library/Application\ Support/Purple/launch-dep-en.sh https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Helpers/launch-dep-en.sh
