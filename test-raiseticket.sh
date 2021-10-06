@@ -22,7 +22,7 @@ screen -dmS DEPFull /Library/Application\ Support/Purple/launch-dep-en.sh
 echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
 
 echo Status: Creating System Report >> /var/tmp/depnotify.log
-mkdir -p /Library/Application\ Support/Purple/Diagnostics/
+mkdir -p "/Library/Application Support/Purple/Diagnostics/"
 mkdir -p "/Library/Application Support/Purple/Diagnostics/$dt/"
 mkdir -p "/Library/Application Support/Purple/Diagnostics/$dt/DiagnosticReports"
 
