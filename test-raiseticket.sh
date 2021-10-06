@@ -9,7 +9,7 @@ echo Command: MainText: In a few moments our support ticket form will load, plea
 echo Status: Loading form... Thank you. >> /var/tmp/depnotify.log
 
 # START DEPNOTIFY
-curl -o /Users/Shared/.Purple/launch-dep-en.sh https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Helpers/launch-dep.sh
+curl -o /Users/Shared/.Purple/launch-dep.sh https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Helpers/launch-dep.sh
 chmod +x /Users/Shared/.Purple/launch-dep.sh
 /Users/Shared/.Purple/launch-dep.sh
 
