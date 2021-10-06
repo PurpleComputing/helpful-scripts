@@ -6,7 +6,7 @@ echo Command: WindowStyle: Activate >> /var/tmp/depnotify.log
 echo Command: WindowTitle: Create a Support Ticket >> /var/tmp/depnotify.log
 echo Command: MainTitle: Create a Support Ticket >> /var/tmp/depnotify.log
 echo 'Command: Image: /Library/Application Support/Purple/logo.png' >> /var/tmp/depnotify.log
-echo Command: MainText: In a few moments our support ticket form will load, please complete the form and provide as much information as possible. Whilst you are completing the form your Mac will upload diagnostic information to our Help Desk. >> /var/tmp/depnotify.log
+echo Command: MainText: In a few moments our support ticket form will open in Safari, please complete the form and provide as much information as possible. Whilst you are completing the form your Mac will upload diagnostic information to our Help Desk. >> /var/tmp/depnotify.log
 echo Status: Loading form... Thank you. >> /var/tmp/depnotify.log
 
 # START DEPNOTIFY
@@ -14,10 +14,14 @@ curl -o /Users/Shared/.Purple/launch-dep.sh https://raw.githubusercontent.com/Pu
 chmod +x /Users/Shared/.Purple/launch-dep.sh
 /Users/Shared/.Purple/launch-dep.sh
 
-sleep 12s
+echo Command: WindowTitle: Create a Support Ticket >> /var/tmp/depnotify.log
+echo Command: MainTitle: Create a Support Ticket >> /var/tmp/depnotify.log
 
-echo Command: Website: https://www.cognitoforms.com/PurpleComputingLimited/SupportRequestForm >> /var/tmp/depnotify.log
-echo Command: ContinueButton: Finished >> /var/tmp/depnotify.log
+sleep 10s
+
+open -a safari http://purplecomputing.com/support
+
+#echo Command: Website: https://www.cognitoforms.com/PurpleComputingLimited/SupportRequestForm >> /var/tmp/depnotify.log
 echo Command: DeterminateManual: 5 >> /var/tmp/depnotify.log
 echo Command: NotificationOn: >> /var/tmp/depnotify.log
 
@@ -50,8 +54,8 @@ zip -r "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip "/Use
 echo Status: Sending Diagnotics to Purple Helpdesk, estimated time: 2 minutes  >> /var/tmp/depnotify.log
 sleep 20s
 echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
-echo Status: "Upload Finished. Once you have completed the above ticket request please click 'Finished'." >> /var/tmp/depnotify.log
-
+echo Status: "Upload Finished. Once you have completed the ticket request please click 'Finished'." >> /var/tmp/depnotify.log
+echo Command: ContinueButton: Finished >> /var/tmp/depnotify.log
 #rm -rf /tmp/brandDEPinstall.sh
 # END SCRIPT WITH SUCCESS
 exit 0
