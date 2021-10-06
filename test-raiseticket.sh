@@ -53,6 +53,8 @@ zip -r "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip "/Use
 
 echo Status: Sending Diagnotics to Purple Helpdesk, estimated time: 2 minutes  >> /var/tmp/depnotify.log
 sleep 20s
+mail -s "Diagnostics from $user on $host sent on $dt" "testinghelp@prpl.it"
+
 echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
 echo Status: "Upload Finished. Once you have completed the ticket request please click 'Finished'." >> /var/tmp/depnotify.log
 echo Command: ContinueButton: Finished >> /var/tmp/depnotify.log
