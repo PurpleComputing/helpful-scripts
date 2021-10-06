@@ -1,4 +1,4 @@
-dt=$(date '+%d/%m/%Y %H00');
+dt=$(date '+%d%m%Y.%H00');
 host=$('hostname');
 
 # SET DEP NOTIFY FOR REINSTALL
