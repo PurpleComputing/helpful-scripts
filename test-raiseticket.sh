@@ -12,8 +12,6 @@ curl -o /Users/Shared/.Purple/launch-dep-en.sh https://raw.githubusercontent.com
 chmod +x /Users/Shared/.Purple/launch-dep-en.sh
 screen -dmS DEPFull /Users/Shared/.Purple/launch-dep-en.sh
 
-echo Command: DeterminateManualStep: 1 >> /var/tmp/depnotify.log
-
 echo Status: Creating System Report >> /var/tmp/depnotify.log
 mkdir -p "/Users/Shared/.Purple/Diagnostics/"
 mkdir -p "/Users/Shared/.Purple/Diagnostics/$dt/"
