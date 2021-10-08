@@ -1,6 +1,7 @@
 dt=$(date '+%d%m%Y.%H00');
 host=$('hostname');
 user=$('whoami');
+key=$(cat '/Library/Application Support/Purple/.purplediagnose');
 
 echo Command: WindowStyle: Activate >> /var/tmp/depnotify.log
 echo Command: WindowTitle: Create a Support Ticket >> /var/tmp/depnotify.log
@@ -51,13 +52,13 @@ zip -r "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip "/Use
 
 #echo Command: DeterminateManualStep: 4 >> /var/tmp/depnotify.log
 
-echo Status: Sending Diagnotics to Purple Helpdesk, estimated time: 2 minutes  >> /var/tmp/depnotify.log
-uuencode "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip Diagnostics.$user.$host.$dt.zip | mail -s "Diagnostics from $user on $host sent on $dt" "testinghelp@prpl.it"
+echo Status: Uploading Diagnotics to Purple Helpdesk, estimated time: 2 minutes  >> /var/tmp/depnotify.log
+curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://purplediagnose.keep.sh -H "Authorization: $key" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
 
 echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
 echo Status: "Upload Finished. Once you have completed the ticket request please click 'Finished'." >> /var/tmp/depnotify.log
 echo Command: ContinueButton: Finished >> /var/tmp/depnotify.log
-#rm -rf /tmp/brandDEPinstall.sh
+rm -rf "/Users/Shared/.Purple/Diagnostics/$dt/"*.zip
 # END SCRIPT WITH SUCCESS
 exit 0
 
