@@ -69,9 +69,10 @@ uploadurl=$(cat "/Users/Shared/.Purple/Diagnostics/$dt.uploadurl.txt");
 rm -rf $SMTPMSG
 echo "From: "Purple Diagnose" <$SMTPFROM>" >> $SMTPMSG
 echo "To: "Purple Computing Team" <$SMTPTO>" >> $SMTPMSG
-echo "Subject: Diagnostics for incoming ticket for $user" >> $SMTPMSG
+echo "Subject: Diagnostics for incoming ticket from $user" >> $SMTPMSG
 echo "" >> $SMTPMSG
 echo "Hi Purple Team," >> $SMTPMSG
+echo "" >> $SMTPMSG
 echo "A new file has been uploaded to: $uploadurl containing diagnostic information for $user on $host." >> $SMTPMSG
 echo "" >> $SMTPMSG
 echo "Warmest Regards," >> $SMTPMSG
