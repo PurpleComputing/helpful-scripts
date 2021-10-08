@@ -62,11 +62,11 @@ zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$hos
 
 echo Status: Uploading Diagnotics to Purple Helpdesk, estimated time: 2 minutes  >> /var/tmp/depnotify.log
 rm -rf "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
-curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://purplediagnose.keep.sh -H "Authorization: $key" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
+curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://purplediagnose.keep.sh -H "Authorization: $key" -H "Replace" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
 
 uploadurl=$(cat "/Users/Shared/.Purple/Diagnostics/$dt.uploadurl.txt");
-#CREATE MESSAGE
-
+# REMOVE AND CREATE MESSAGE
+rm -rf $SMTPMSG
 echo "From: "Purple Diagnose" <$SMTPFROM>" >> $SMTPMSG
 echo "To: "Purple Computing Team" <$SMTPTO>" >> $SMTPMSG
 echo "Subject: Diagnostics for incoming ticket for $user" >> $SMTPMSG
