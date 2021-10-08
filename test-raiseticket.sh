@@ -1,4 +1,4 @@
-dt=$(date '+%d%m%Y.%H00');
+dt=$(date '+%d%m%Y.%H%M00');
 host=$('hostname');
 user=$('whoami');
 key=$(cat '/Library/Application Support/Purple/.purplediagnose');
@@ -61,6 +61,7 @@ zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$hos
 #echo Command: DeterminateManualStep: 4 >> /var/tmp/depnotify.log
 
 echo Status: Uploading Diagnotics to Purple Helpdesk, estimated time: 2 minutes  >> /var/tmp/depnotify.log
+rm -rf "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
 curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://purplediagnose.keep.sh -H "Authorization: $key" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
 
 uploadurl=$(cat "/Users/Shared/.Purple/Diagnostics/$dt.uploadurl.txt");
