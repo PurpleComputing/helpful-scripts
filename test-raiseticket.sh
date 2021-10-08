@@ -19,7 +19,7 @@ chmod +x /Users/Shared/.Purple/launch-dep.sh
 echo Command: WindowTitle: Create a Support Ticket >> /var/tmp/depnotify.log
 echo Command: MainTitle: Create a Support Ticket >> /var/tmp/depnotify.log
 
-sleep 10s
+sleep 6s
 
 open -a safari http://purplecomputing.com/support
 
@@ -30,6 +30,7 @@ echo Command: NotificationOn: >> /var/tmp/depnotify.log
 echo Command: ContinueButton: Hide >> /var/tmp/depnotify.log
 
 echo Status: Creating System Report, estimated time: 5 minutes >> /var/tmp/depnotify.log
+rm -rf /Users/Shared/.Purple/Diagnostics/*
 mkdir -p "/Users/Shared/.Purple/Diagnostics/"
 mkdir -p "/Users/Shared/.Purple/Diagnostics/$dt/"
 mkdir -p "/Users/Shared/.Purple/Diagnostics/$dt/DiagnosticReports"
@@ -48,8 +49,8 @@ defaults read /Library/Preferences/com.teamviewer.teamviewer.preferences.plist C
 #echo Command: DeterminateManualStep: 3 >> /var/tmp/depnotify.log
 
 echo Status: Zipping Diagnostics Info, estimated time: 3 minutes  >> /var/tmp/depnotify.log
-sleep 5s
-zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip "/Users/Shared/.Purple/Diagnostics/$dt/"
+cd "/Users/Shared/.Purple/Diagnostics/$dt/"
+zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip .
 
 #echo Command: DeterminateManualStep: 4 >> /var/tmp/depnotify.log
 
@@ -59,7 +60,11 @@ curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$
 echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
 echo Status: "Upload Finished. Once you have completed the ticket request please click 'Finished'." >> /var/tmp/depnotify.log
 echo Command: ContinueButton: Finished >> /var/tmp/depnotify.log
-rm -rf "/Users/Shared/.Purple/Diagnostics/$dt/"*.zip
+
+# POST RUN CLEANUP
+rm -rf "/Users/Shared/.Purple/Diagnostics/$dt/
+rm -rf "/Users/Shared/.Purple/Diagnostics/*.zip
+
 # END SCRIPT WITH SUCCESS
 exit 0
 
