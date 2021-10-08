@@ -2,6 +2,7 @@ dt=$(date '+%d%m%Y.%H00');
 host=$('hostname');
 user=$('whoami');
 key=$(cat '/Library/Application Support/Purple/.purplediagnose');
+zippass=$(cat '/Library/Application Support/Purple/.purplez');
 
 echo Command: WindowStyle: Activate >> /var/tmp/depnotify.log
 echo Command: WindowTitle: Create a Support Ticket >> /var/tmp/depnotify.log
@@ -48,7 +49,7 @@ defaults read /Library/Preferences/com.teamviewer.teamviewer.preferences.plist C
 
 echo Status: Zipping Diagnostics Info, estimated time: 3 minutes  >> /var/tmp/depnotify.log
 sleep 5s
-zip -r "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip "/Users/Shared/.Purple/Diagnostics/$dt/"
+zip -re -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip "/Users/Shared/.Purple/Diagnostics/$dt/"
 
 #echo Command: DeterminateManualStep: 4 >> /var/tmp/depnotify.log
 
