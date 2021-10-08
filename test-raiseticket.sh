@@ -63,6 +63,21 @@ zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$hos
 echo Status: Uploading Diagnotics to Purple Helpdesk, estimated time: 2 minutes  >> /var/tmp/depnotify.log
 curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://purplediagnose.keep.sh -H "Authorization: $key" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
 
+uploadurl=$(cat "/Users/Shared/.Purple/Diagnostics/$dt.uploadurl.txt");
+#CREATE MESSAGE
+
+echo "From: "Purple Diagnose" <$SMTPFROM>" >> $SMTPMSG
+echo "To: "Purple Computing Team" <$SMTPTO>" >> $SMTPMSG
+echo "Subject: Diagnostics for incoming ticket for $user" >> $SMTPMSG
+echo "" >> $SMTPMSG
+echo "Hi Purple Team," >> $SMTPMSG
+echo "A new file has been uploaded to: $uploadurl containing diagnostic information for $user on $host." >> $SMTPMSG
+echo "" >> $SMTPMSG
+echo "Warmest Regards," >> $SMTPMSG
+echo "" >> $SMTPMSG
+echo "Purple MDM Diagnostics Bot" >> $SMTPMSG
+echo "" >> $SMTPMSG
+
 curl --ssl-reqd \
   --url "$SMTPSRV" \
   --user "$SMTPAUTH" \
