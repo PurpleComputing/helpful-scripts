@@ -49,7 +49,7 @@ defaults read /Library/Preferences/com.teamviewer.teamviewer.preferences.plist C
 
 echo Status: Zipping Diagnostics Info, estimated time: 3 minutes  >> /var/tmp/depnotify.log
 sleep 5s
-zip -re -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip "/Users/Shared/.Purple/Diagnostics/$dt/"
+zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip "/Users/Shared/.Purple/Diagnostics/$dt/"
 
 #echo Command: DeterminateManualStep: 4 >> /var/tmp/depnotify.log
 
