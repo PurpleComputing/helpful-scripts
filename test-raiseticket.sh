@@ -32,7 +32,9 @@ echo Command: MainTitle: Create a Support Ticket >> /var/tmp/depnotify.log
 
 sleep 6s
 
-open -a safari http://purplecomputing.com/support
+# OLD METHOD open -a safari http://purplecomputing.com/support
+
+osascript -e "tell application \"/Users/Shared/.Purple/CreateTicket.app\" to activate"
 
 #echo Command: Website: https://www.cognitoforms.com/PurpleComputingLimited/SupportRequestForm >> /var/tmp/depnotify.log
 echo Command: DeterminateManual: 5 >> /var/tmp/depnotify.log
