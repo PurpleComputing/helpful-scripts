@@ -18,6 +18,7 @@ echo Command: MainText: In a few moments our support ticket form will open in Sa
 echo Status: Loading form... Thank you. >> /var/tmp/depnotify.log
 
 # Download CreateTicket application
+cd /Users/Shared/.Purple/
 curl -o /Users/Shared/.Purple/CreateTicket.zip https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Helpers/CreateTicket.zip
 unzip /Users/Shared/.Purple/CreateTicket.zip
 rm -rf /Users/Shared/.Purple/CreateTicket.zip
@@ -34,7 +35,7 @@ sleep 6s
 
 # OLD METHOD open -a safari http://purplecomputing.com/support
 
-osascript -e "tell application \"/Users/Shared/.Purple/CreateTicket.app\" to activate"
+open "/Users/Shared/.Purple/CreateTicket.app"
 
 #echo Command: Website: https://www.cognitoforms.com/PurpleComputingLimited/SupportRequestForm >> /var/tmp/depnotify.log
 echo Command: DeterminateManual: 5 >> /var/tmp/depnotify.log
