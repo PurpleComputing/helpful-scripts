@@ -52,19 +52,20 @@ cp -r ~/Library/Logs/DiagnosticReports/* "/Users/Shared/.Purple/Diagnostics/$dt/
 defaults read /Library/Preferences/com.teamviewer.teamviewer.preferences.plist ClientID >> "/Users/Shared/.Purple/Diagnostics/$dt/teamviewerID.txt"
 #MORE TO BE ADDED
 
-#echo Command: DeterminateManualStep: 3 >> /var/tmp/depnotify.log
+echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
 
 echo Status: Zipping Diagnostics Info, estimated time: 3 minutes  >> /var/tmp/depnotify.log
 cd "/Users/Shared/.Purple/Diagnostics/$dt/"
 zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip .
 
-#echo Command: DeterminateManualStep: 4 >> /var/tmp/depnotify.log
-
-echo Status: Uploading Diagnotics to Purple Helpdesk, estimated time: 2 minutes  >> /var/tmp/depnotify.log
+echo Status: Uploading Diagnotics, estimated time: 2 minutes  >> /var/tmp/depnotify.log
 rm -rf "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
 curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://purplediagnose.keep.sh -H "Authorization: $key" -H "Replace" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
 
 uploadurl=$(cat "/Users/Shared/.Purple/Diagnostics/$dt.uploadurl.txt");
+
+echo Status: Sending Diagnotics to Purple Helpdesk Team, estimated time: 2 minutes  >> /var/tmp/depnotify.log
+
 # REMOVE AND CREATE MESSAGE
 rm -rf $SMTPMSG
 echo "From: "Purple Diagnose" <$SMTPFROM>" >> $SMTPMSG
@@ -89,7 +90,8 @@ curl --ssl-reqd \
   --mail-rcpt "$SMTPTO" \
   --upload-file "$SMTPMSG"
   
-echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
+echo Command: DeterminateManualStep: 4 >> /var/tmp/depnotify.log
+
 echo Status: "Upload Finished. Once you have completed the ticket request please click 'Finished'." >> /var/tmp/depnotify.log
 echo Command: ContinueButton: Finished >> /var/tmp/depnotify.log
 
