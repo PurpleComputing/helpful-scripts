@@ -48,9 +48,14 @@ sleep 3s
 
 echo Status: Copying Log Files, estimated time: 4 minutes  >> /var/tmp/depnotify.log
 sleep 5s
+
+# COPY USER DIAGNOSTIC LOGS
 cp -r ~/Library/Logs/DiagnosticReports/* "/Users/Shared/.Purple/Diagnostics/$dt/DiagnosticReports"
+# COPY SYSTEM LOGS
+cp -r /private/var/log/*.log "/Users/Shared/.Purple/Diagnostics/$dt/DiagnosticReports"
+
+#INCLUDE TEAMVIEWER ID
 defaults read /Library/Preferences/com.teamviewer.teamviewer.preferences.plist ClientID >> "/Users/Shared/.Purple/Diagnostics/$dt/teamviewerID.txt"
-#MORE TO BE ADDED
 
 echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
 
