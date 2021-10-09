@@ -60,7 +60,7 @@ zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$hos
 
 echo Status: Uploading Diagnotics, estimated time: 2 minutes  >> /var/tmp/depnotify.log
 rm -rf "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
-curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://purplediagnose.keep.sh -H "Authorization: $key" -H "Replace" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
+curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://purplediagnose-uk.keep.sh -H "Replace" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
 
 uploadurl=$(cat "/Users/Shared/.Purple/Diagnostics/$dt.uploadurl.txt");
 
@@ -75,8 +75,6 @@ echo "" >> $SMTPMSG
 echo "Hi Purple Team," >> $SMTPMSG
 echo "" >> $SMTPMSG
 echo "A new file has been uploaded to: $uploadurl containing diagnostic information for $user on $host." >> $SMTPMSG
-echo "You will need to run this command to download the file:" >> $SMTPMSG
-echo "curl -o ~/Downloads/Diagnostics.$user.$host.$dt.zip -L $uploadurl -H "Authorization: $key"" >> $SMTPMSG
 echo "" >> $SMTPMSG
 echo "Warmest Regards," >> $SMTPMSG
 echo "" >> $SMTPMSG
