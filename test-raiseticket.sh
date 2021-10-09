@@ -110,6 +110,9 @@ rm -rf "/Users/Shared/.Purple/Diagnostics/$dt/
 rm -rf "/Users/Shared/.Purple/Diagnostics/*.zip
 rm -rf /Users/Shared/.Purple/CreateTicket.zip
 # END SCRIPT WITH SUCCESS
+
+sleep 900s
+killall FluidApp
 exit 0
 
 
