@@ -17,6 +17,11 @@ echo 'Command: Image: /Library/Application Support/Purple/logo.png' >> /var/tmp/
 echo Command: MainText: In a few moments our support ticket form will open in Safari, please complete the form and provide as much information as possible. Whilst you are completing the form your Mac will upload diagnostic information to our Help Desk. You can hide this window as you will continue to get notifications. >> /var/tmp/depnotify.log
 echo Status: Loading form... Thank you. >> /var/tmp/depnotify.log
 
+# Download CreateTicket application
+curl -o /Users/Shared/.Purple/CreateTicket.zip https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Helpers/CreateTicket.zip
+unzip /Users/Shared/.Purple/CreateTicket.zip
+rm -rf /Users/Shared/.Purple/CreateTicket.zip
+
 # START DEPNOTIFY
 curl -o /Users/Shared/.Purple/launch-dep.sh https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Helpers/launch-dep.sh
 chmod +x /Users/Shared/.Purple/launch-dep.sh
