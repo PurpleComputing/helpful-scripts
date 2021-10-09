@@ -75,7 +75,7 @@ echo "Hi Purple Team," >> $SMTPMSG
 echo "" >> $SMTPMSG
 echo "A new file has been uploaded to: $uploadurl containing diagnostic information for $user on $host." >> $SMTPMSG
 echo "You will need to run this command to download the file:" >> $SMTPMSG
-echo "curl -o ~/Downloads/Diagnostics.$user.$host.$dt.zip -L $uploadurl -H "Authorization: $key" >> $SMTPMSG
+echo "curl -o ~/Downloads/Diagnostics.$user.$host.$dt.zip -L $uploadurl -H "Authorization: $key"" >> $SMTPMSG
 echo "" >> $SMTPMSG
 echo "Warmest Regards," >> $SMTPMSG
 echo "" >> $SMTPMSG
