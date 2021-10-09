@@ -21,7 +21,6 @@ echo Status: Loading form... Thank you. >> /var/tmp/depnotify.log
 cd /Users/Shared/.Purple/
 curl -o /Users/Shared/.Purple/CreateTicket.zip https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Helpers/CreateTicket.zip
 unzip /Users/Shared/.Purple/CreateTicket.zip
-rm -rf /Users/Shared/.Purple/CreateTicket.zip
 
 # START DEPNOTIFY
 curl -o /Users/Shared/.Purple/launch-dep.sh https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Helpers/launch-dep.sh
@@ -109,7 +108,7 @@ echo Command: ContinueButton: Finished >> /var/tmp/depnotify.log
 # POST RUN CLEANUP
 rm -rf "/Users/Shared/.Purple/Diagnostics/$dt/
 rm -rf "/Users/Shared/.Purple/Diagnostics/*.zip
-
+rm -rf /Users/Shared/.Purple/CreateTicket.zip
 # END SCRIPT WITH SUCCESS
 exit 0
 
