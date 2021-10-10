@@ -18,6 +18,7 @@ echo Command: MainText: In a few moments our support ticket form will open in Sa
 echo Status: Loading form... Thank you. >> /var/tmp/depnotify.log
 
 # Download CreateTicket application
+rm -rf "/Users/Shared/.Purple/CreateTicket.app"
 cd /Users/Shared/.Purple/
 curl -o /Users/Shared/.Purple/CreateTicket.zip https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Helpers/CreateTicket.zip
 unzip /Users/Shared/.Purple/CreateTicket.zip
