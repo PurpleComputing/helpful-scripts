@@ -43,6 +43,8 @@ echo Command: NotificationOn: >> /var/tmp/depnotify.log
 
 echo Command: ContinueButton: Hide >> /var/tmp/depnotify.log
 
+#Remove any but the last diagnose file created.
+
 echo Status: Creating System Report, estimated time: 5 minutes >> /var/tmp/depnotify.log
 rm -rf /Users/Shared/.Purple/Diagnostics/*
 mkdir -p "/Users/Shared/.Purple/Diagnostics/"
@@ -70,6 +72,8 @@ echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
 echo Status: Zipping Diagnostics Info, estimated time: 3 minutes  >> /var/tmp/depnotify.log
 cd "/Users/Shared/.Purple/Diagnostics/$dt/"
 zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip .
+
+#Consider removing the unecrypted files immediately after compression has finished so we only leave password protected file on the device
 
 echo Status: Uploading Diagnotics, estimated time: 2 minutes  >> /var/tmp/depnotify.log
 rm -rf "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
