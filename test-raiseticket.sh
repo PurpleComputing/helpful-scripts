@@ -43,13 +43,12 @@ echo Command: NotificationOn: >> /var/tmp/depnotify.log
 
 echo Command: ContinueButton: Hide >> /var/tmp/depnotify.log
 
-#Remove any but the last diagnose file created.
-
 echo Status: Creating System Report, estimated time: 5 minutes >> /var/tmp/depnotify.log
 rm -rf /Users/Shared/.Purple/Diagnostics/*
 mkdir -p "/Users/Shared/.Purple/Diagnostics/"
 mkdir -p "/Users/Shared/.Purple/Diagnostics/$dt/"
 mkdir -p "/Users/Shared/.Purple/Diagnostics/$dt/DiagnosticReports"
+mkdir -p "/Users/Shared/.Purple/PreviousDiagnostics/"
 
 system_profiler >> "/Users/Shared/.Purple/Diagnostics/$dt/system_report.$host.$dt.txt"
 sleep 3s
@@ -70,10 +69,11 @@ defaults read /Library/Preferences/com.teamviewer.teamviewer.preferences.plist C
 echo Command: DeterminateManualStep: 2 >> /var/tmp/depnotify.log
 
 echo Status: Zipping Diagnostics Info, estimated time: 3 minutes  >> /var/tmp/depnotify.log
-cd "/Users/Shared/.Purple/Diagnostics/$dt/"
+cd "/Users/Shared/.Purple/Diagnostics/"
 zip -er -P "$zippass" "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip .
 
-#Consider removing the unecrypted files immediately after compression has finished so we only leave password protected file on the device
+#Removing the unecrypted files immediately after compression has finished so we only leave the password protected file on the device
+rm -rf "/Users/Shared/.Purple/Diagnostics/$dt"
 
 echo Status: Uploading Diagnotics, estimated time: 2 minutes  >> /var/tmp/depnotify.log
 rm -rf "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
@@ -111,13 +111,10 @@ echo Status: "Upload Finished. Once you have completed the ticket request please
 echo Command: ContinueButton: Finished >> /var/tmp/depnotify.log
 
 # POST RUN CLEANUP
-rm -rf "/Users/Shared/.Purple/Diagnostics/$dt/
-rm -rf "/Users/Shared/.Purple/Diagnostics/*.zip
+mv "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip "/Users/Shared/.Purple/PreviousDiagnostics/"Diagnostics.$user.$host.$dt.zip
 rm -rf /Users/Shared/.Purple/CreateTicket.zip
 # END SCRIPT WITH SUCCESS
 
 sleep 900s
 killall FluidApp
 exit 0
-
-
