@@ -13,11 +13,14 @@
 #
 # HISTORY
 #
-#   Version: 1.2
+#   Version: 1.3
 #
 #   - 1.0 Michael Tanner, 07.10.2021 Initial Build
 #   - 1.1 Martyn Watts, 13.10.2021 removed unencrypted files only leaving protected file on device
 #   - 1.2 Martyn Watts, 13.10.2021 Added some comments
+#   - 1.3b1 Michael Tanner, 17.10.2021 Changed Upload URL to self-hosted solution and added HTTP Auth
+#   - 1.3b2 Michael Tanner, 17.10.2021 Added zip password and basic auth to email sent to helpdesk
+#   - 1.3 Michael Tanner, 17.10.2021 Tested above and confirmed working
 #
 ####################################################################################################
 # Script to download and run the raise support ticket functions.
