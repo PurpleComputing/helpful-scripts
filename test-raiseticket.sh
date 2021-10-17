@@ -30,6 +30,7 @@ host=$('hostname');
 user=$('whoami');
 key=$(cat '/Library/Application Support/Purple/.purplediagnose');
 zippass=$(cat '/Library/Application Support/Purple/.purplez');
+authbasic=$(cat '/Library/Application Support/Purple/.purpleauth');
 
 SMTPSRV=$(cat '/Library/Application Support/Purple/.SMTP/.smtpserver');
 SMTPAUTH=$(cat '/Library/Application Support/Purple/.SMTP/.smtplogin');
@@ -134,7 +135,7 @@ rm -rf "/Users/Shared/.Purple/Diagnostics/$dt"
 
 echo Status: Uploading Diagnotics, estimated time: 2 minutes  >> /var/tmp/depnotify.log
 rm -rf "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
-curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://diagnose.prpl.it -H "Authorization:Basic $authbasic" -H "Replace" -H "Max-Days: 1" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
+curl --upload-file "/Users/Shared/.Purple/Diagnostics/"Diagnostics.$user.$host.$dt.zip https://$authbasic@diagnose.prpl.it -H "Replace" -H "Max-Days: 1" >> "/Users/Shared/.Purple/Diagnostics/"$dt.uploadurl.txt
 
 uploadurl=$(cat "/Users/Shared/.Purple/Diagnostics/$dt.uploadurl.txt");
 
