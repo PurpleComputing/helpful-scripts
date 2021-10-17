@@ -157,7 +157,7 @@ echo "" >> $SMTPMSG
 echo "A new file has been uploaded to: $uploadurl containing diagnostic information for $user on $host." >> $SMTPMSG
 echo "" >> $SMTPMSG
 echo "The Username and Password to download are (username:password): $authbasic" >> $SMTPMSG
-echo "The Password to decompress the diagnostics zip is: $$zippass" >> $SMTPMSG
+echo "The Password to decompress the diagnostics zip is: $zippass" >> $SMTPMSG
 echo "" >> $SMTPMSG
 echo "Warmest Regards," >> $SMTPMSG
 echo "" >> $SMTPMSG
