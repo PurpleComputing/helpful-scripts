@@ -159,6 +159,8 @@ echo "" >> $SMTPMSG
 echo "The Username and Password to download are (username:password): $authbasic" >> $SMTPMSG
 echo "The Password to decompress the diagnostics zip is: $zippass" >> $SMTPMSG
 echo "" >> $SMTPMSG
+echo "Please Note: Link is only valid for 24 hours." >> $SMTPMSG
+echo "" >> $SMTPMSG
 echo "Warmest Regards," >> $SMTPMSG
 echo "" >> $SMTPMSG
 echo "Purple MDM Diagnostics Bot" >> $SMTPMSG
