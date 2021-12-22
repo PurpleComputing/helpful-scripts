@@ -9,18 +9,19 @@
 # *****/                                  *****/                              ())
 # *****/                                  *****/                                  
 #
-
+# MAC SPECIFIC SCRIPT
+#
 #//////////////////\\\\\\\\\\\\\\\\\\\\#
 #\\\\\\\\\\\\\\\\\\////////////////////#
 #//////////////////\\\\\\\\\\\\\\\\\\\\#
 #\\\\\\\\\\\\\\\\\\////////////////////#
-###\\\\ INCOMPLETE DUE NOT TEST  ////###
+###\\\\  INCOMPLETE DO NOT TEST  ////###
 #//////////////////\\\\\\\\\\\\\\\\\\\\#
 #\\\\\\\\\\\\\\\\\\////////////////////#
 #//////////////////\\\\\\\\\\\\\\\\\\\\#
 #\\\\\\\\\\\\\\\\\\////////////////////#
-
-
+#
+#
 ################################################################################################
 
 
@@ -30,7 +31,7 @@ NETID=[REPLACE WITH NET ID]
 APIKEY=[REPLACE WITH API KEY]
 #
 MYID=$(zerotier-cli info | cut -d " " -f 3)
-DEVNAME=$(hostname -f)
+DEVNAME=$(/usr/sbin/scutil --get ComputerName)
 DEVDESC=Device authorised through Purple Script.
 #Then call the API
 curl -H "Authorization: Bearer $APIKEY" -X POST -d '{"name":"$DEVNAME","description":"$DEVDESC","config":{"authorized":true}}' https://my.zerotier.com/api/network/$NETID/member/$MYID
