@@ -86,7 +86,7 @@ if [[ " $@ " =~ "indesign2022" ]]; then
     DOCKPOS=end
 fi
 if [[ " $@ " =~ "illustrator2022" ]]; then
-    APPNA="Adobe Illustrator 2022"
+    APPNA="Adobe Illustrator"
     APPPA="/Applications/Adobe Illustrator 2022"
     DOCKPOS=end
 fi
