@@ -95,6 +95,24 @@ if [[ " $@ " =~ "acrobatdc" ]]; then
     APPPA="/Applications/Adobe Acrobat DC"
     DOCKPOS=end
 fi
+
+#OTHERS
+if [[ " $@ " =~ "mail" ]]; then
+    APPNA="Mail"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
+if [[ " $@ " =~ "maps" ]]; then
+    APPNA="Maps"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
+if [[ " $@ " =~ "news" ]]; then
+    APPNA="News"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
+
 # ********************************************************************************************************************************
 # END APP LABELS
 # ********************************************************************************************************************************
