@@ -100,7 +100,7 @@ if [[ " $@ " =~ "acrobatdc" ]]; then
     DOCKPOS=end
 fi
 if [[ " $@ " =~ "adobecreativeclouddesktop" ]]; then
-    APPNA="Adobe Creative Cloud"
+    APPNA="Creative Cloud"
     APPPA="/Applications/Utilities/Adobe Creative Cloud/ACC"
     DOCKPOS=end
 fi
