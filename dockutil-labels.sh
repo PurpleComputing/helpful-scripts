@@ -142,7 +142,12 @@ if [[ " $@ " =~ "mosyless" ]]; then
     APPPA="/Applications"    
     DOCKPOS=2
 fi
-
+# SYSTEM PREFERENCES
+if [[ " $@ " =~ "systempreferences" ]]; then
+    APPNA="System Preferences"
+    APPPA="/Applications"    
+    DOCKPOS=end
+fi
 
 
 # ********************************************************************************************************************************
