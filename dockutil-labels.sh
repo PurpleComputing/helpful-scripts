@@ -73,7 +73,11 @@ if [[ " $@ " =~ "zoom" ]]; then
     APPPA="/Applications"
     DOCKPOS=end
 fi
-
+if [[ " $@ " =~ "skype" ]]; then
+    APPNA="Skype"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
 # ADOBE APPS
 if [[ " $@ " =~ "photoshop2022" ]]; then
     APPNA="Adobe Photoshop 2022"
@@ -95,7 +99,11 @@ if [[ " $@ " =~ "acrobatdc" ]]; then
     APPPA="/Applications/Adobe Acrobat DC"
     DOCKPOS=end
 fi
-
+if [[ " $@ " =~ "adobecreativeclouddesktop" ]]; then
+    APPNA="Adobe Creative Cloud"
+    APPPA="/Applications/Utilities/Adobe Creative Cloud/ACC"
+    DOCKPOS=end
+fi
 #OTHERS
 if [[ " $@ " =~ "mail" ]]; then
     APPNA="Mail"
@@ -112,7 +120,16 @@ if [[ " $@ " =~ "news" ]]; then
     APPPA="/Applications"
     DOCKPOS=end
 fi
-
+if [[ " $@ " =~ "filezilla" ]]; then
+    APPNA="FileZilla"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
+if [[ " $@ " =~ "teamviewer" ]]; then
+    APPNA="TeamViewer"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
 # ********************************************************************************************************************************
 # END APP LABELS
 # ********************************************************************************************************************************
@@ -122,6 +139,7 @@ fi
 # MOSYLE SELF SERVICE
 if [[ " $@ " =~ "mosyless" ]]; then
     APPNA="Self-Service"
+    APPPA="/Applications"    
     DOCKPOS=2
 fi
 
