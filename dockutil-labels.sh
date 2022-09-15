@@ -130,8 +130,21 @@ if [[ " $@ " =~ "teamviewer" ]]; then
     APPPA="/Applications"
     DOCKPOS=end
 fi
+
+# NOT KNOWN TO INSTALLOMATOR - USE FOR DOCK POPULATION ONLY
+
 if [[ " $@ " =~ "zywallsecuextender" ]]; then
     APPNA="ZyWALL SecuExtender"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
+if [[ " $@ " =~ "redstorproese" ]]; then
+    APPNA="Redstor Pro ESE"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
+if [[ " $@ " =~ "mitelconnect" ]]; then
+    APPNA="Mitel Connect"
     APPPA="/Applications"
     DOCKPOS=end
 fi
