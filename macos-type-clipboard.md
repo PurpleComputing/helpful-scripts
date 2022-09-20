@@ -1,5 +1,6 @@
 
-# MOSYLE BASIC ENROLLMENT SCRIPT
+# macOS Type Clipboard
+This Shortcut is incredibly useful to have added to your Dock or in the status bar. It allows you to copy a password from a field (or from ITGlue) and to launch the shortcut for it to type from the clipboard. I researched a solution for this after coming across a very complex password used for a Mac user account. This solves the inability to paste at a login window on both macOS or Windows through TeamViewer and other RDP softwares.
 
 ##### LINK TO SHORTCUT FOR MONTEREY
 [https://github.com/PurpleComputing/mdmscripts/raw/main/Helpers/Type%20Clipboard.shortcut](https://github.com/PurpleComputing/mdmscripts/raw/main/Helpers/Type%20Clipboard.shortcut)
