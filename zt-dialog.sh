@@ -1,7 +1,14 @@
 !/bin/bash
 
-curl -s https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Installomator.sh | bash
-/usr/local/Installomator/Installomator.sh dialog BLOCKING_PROCESS_ACTION=quit_kill NOTIFY=silent
+# CHECKS IF INSTALLOMATOR IS INSTALLED AND INSTALLS IF NOT
+if [ ! -e "/usr/local/Installomator/Installomator.sh" ]; then
+    curl -s https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Installomator.sh | bash
+fi
+
+# CHECKS IF DIALOG IS INSTALLED AND INSTALLS IF NOT
+if [ ! -e "/usr/local/bin/dialog" ]; then
+    /usr/local/Installomator/Installomator.sh dialog BLOCKING_PROCESS_ACTION=quit_kill NOTIFY=silent
+fi
 
 apps=(
     "Joining,/tmp/ztnetjoined.log"
