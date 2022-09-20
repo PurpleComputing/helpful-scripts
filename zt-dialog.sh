@@ -1,57 +1,7 @@
 !/bin/bash
 
-#### START SILENT DIALOG INSTALL OR UPDATE
-######################################################################
-# Installation using Installomator (enter the software to install separated with spaces in the "whatList"-variable)
-whatList="dialog"
-# Covered by Mosyle Catalog: "brave firefox googlechrome microsoftedge microsoftteams signal sublimetext vlc webex zoom" among others
-LOGO="mosyleb" # or "mosylem"
-######################################################################
-
-## Mark: Code here
-
-# No sleeping
-/usr/bin/caffeinate -d -i -m -u &
-caffeinatepid=$!
-caffexit () {
-    kill "$caffeinatepid"
-    pkill caffeinate
-    exit $1
-}
-# Mark: Start Installomator label(s) installation
-
-# Count errors
-errorCount=0
-
-# Verify that Installomator has been installed
-destFile="/usr/local/Installomator/Installomator.sh"
-if [ ! -e "${destFile}" ]; then
-    curl https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Installomator.sh | bash
-fi
-
-for what in $whatList; do
-    #echo $item
-    # Install software using Installomator
-    cmdOutput="$(${destFile} ${what} LOGO=$LOGO NOTIFY=silent BLOCKING_PROCESS_ACTION=quit_kill || true)" # NOTIFY=silent BLOCKING_PROCESS_ACTION=quit_kill INSTALL=force
-    # Check result
-    exitStatus="$( echo "${cmdOutput}" | grep --binary-files=text -i "exit" | tail -1 | sed -E 's/.*exit code ([0-9]).*/\1/g' || true )"
-    if [[ ${exitStatus} -ne 0 ]] ; then
-        echo "Error installing ${what}. Exit code ${exitStatus}"
-        #echo "$cmdOutput"
-        errorOutput="$( echo "${cmdOutput}" | grep --binary-files=text -i "error" || true )"
-        echo "$errorOutput"
-        let errorCount++
-    fi
-done
-
-echo
-echo "Errors: $errorCount"
-echo "[$(DATE)][LOG-END]"
-
-caffexit $errorCount
-
-#### END SILENT DIALOG INSTALL OR UPDATE
-
+curl -s https://raw.githubusercontent.com/PurpleComputing/mdmscripts/main/Installomator.sh | bash
+/usr/local/Installomator/Installomator.sh dialog
 
 apps=(
     "Joining,/tmp/ztnetjoined.log"
