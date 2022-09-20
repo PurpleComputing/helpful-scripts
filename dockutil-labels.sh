@@ -165,6 +165,7 @@ if [[ " $@ " =~ "mosyless" ]]; then
     APPPA="/Applications"    
     DOCKPOS=2
 fi
+
 # SYSTEM PREFERENCES
 if [[ " $@ " =~ "systempreferences" ]]; then
     APPNA="System Preferences"
@@ -172,6 +173,12 @@ if [[ " $@ " =~ "systempreferences" ]]; then
     DOCKPOS=end
 fi
 
+# LAUNCHPAD
+if [[ " $@ " =~ "launchpad" ]]; then
+    APPNA="Launchpad"
+    APPPA="/Applications"    
+    DOCKPOS=1
+fi
 
 # ********************************************************************************************************************************
 # EXECUTE TASK
