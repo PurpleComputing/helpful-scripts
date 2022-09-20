@@ -8,6 +8,7 @@ This Shortcut is incredibly useful to have added to your Dock or in the status b
 The below permissions should be requested on first use, head to System Preferences > Security & Privacy > Privacy > Accessibility and tick the boxes to grant permissions.
 
 Accessibility > Shortcuts
+
 Accessibility > siriactionsd
 
 ### SCRIPT
