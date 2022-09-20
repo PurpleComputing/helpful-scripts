@@ -1,6 +1,5 @@
 !/bin/bash
 #
-NETNAME=$@
 # List of apps to process
 # Provide the display name as you prefer and the path to the app/file. ex: "Google Chrome,/Applications/Google Chrome.app"
 # Tip: Check for something like print drivers using the pkg receipt, ex: "Konica-Minolta drivers,/var/db/receipts/jp.konicaminolta.print.package.C759.plist"
@@ -11,8 +10,8 @@ apps=(
 )
 
 # Dialog display settings, change as desired
-title="Joining $NETNAME's ZeroTier Network"
-message="Please wait whilst we join the $NET network for you."
+title="Joining $ZTNETNAME's ZeroTier Network"
+message="Please wait whilst we join the $ZTNETNAME network for you."
 
 # location of dialog and dialog command file
 dialogApp="/usr/local/bin/dialog"
@@ -33,7 +32,7 @@ function dialog_command(){
 }
 
 function finalise(){
-  dialog_command "progresstext: Successfully Joined the $NETNAME Network"
+  dialog_command "progresstext: Successfully Joined the $ZTNETNAME Network"
   dialog_command "progress: complete"
   dialog_command "button1text: Done"
   dialog_command "button1: enable" 
