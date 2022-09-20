@@ -18,7 +18,7 @@ apps=(
 
 # Dialog display settings, change as desired
 title="Joining $ZTNETNAME's ZeroTier Network"
-message="Please wait whilst we join the $ZTNETNAME network for you."
+message="Connecting your device to the $ZTNETNAME VPN network."
 
 # location of dialog and dialog command file
 dialogApp="/usr/local/bin/dialog"
