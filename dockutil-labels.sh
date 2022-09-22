@@ -130,7 +130,21 @@ if [[ " $@ " =~ "teamviewer" ]]; then
     APPPA="/Applications"
     DOCKPOS=end
 fi
-
+if [[ " $@ " =~ "microsoftremotedesktop" ]]; then
+    APPNA="Microsoft Remote Desktop"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
+if [[ " $@ " =~ "1password8" ]]; then
+    APPNA="1Password"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
+if [[ " $@ " =~ "1password7" ]]; then
+    APPNA="1Password 7"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
 # NOT KNOWN TO INSTALLOMATOR - USE FOR DOCK POPULATION ONLY
 
 if [[ " $@ " =~ "zywallsecuextender" ]]; then
@@ -150,6 +164,11 @@ if [[ " $@ " =~ "mitelconnect" ]]; then
 fi
 if [[ " $@ " =~ "transmit" ]]; then
     APPNA="Transmit"
+    APPPA="/Applications"
+    DOCKPOS=end
+fi
+if [[ " $@ " =~ "monday" ]]; then
+    APPNA="monday.com"
     APPPA="/Applications"
     DOCKPOS=end
 fi
