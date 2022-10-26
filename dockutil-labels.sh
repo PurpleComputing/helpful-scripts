@@ -197,7 +197,7 @@ fi
 
 # MOSYLE SELF SERVICE
 if [[ " $@ " =~ "mosyless" ]]; then
-    APPNA="'"Self-Service"'"
+    APPNA='Self-Service'
     APPPA="/Applications"    
     DOCKPOS=2
 fi
