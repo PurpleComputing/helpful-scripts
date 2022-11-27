@@ -239,13 +239,37 @@ fi
 # ********************************************************************************************************************************
 # EXECUTE TASK
 # ********************************************************************************************************************************
-    echo "Status: adding $APPNA to the Dock" >> $DEPLOG
-    echo "removing $APPNA from the Dock"
-    /usr/local/bin/dockutil --remove "$APPNA" --allhomes --no-restart
-    sleep .5
-    echo "adding $APPNA to the Dock"
-    /usr/local/bin/dockutil --add "$APPPA/$APPNA.app" --position $DOCKPOS --allhomes --no-restart
-    sleep .5
+   if [[ " $@ " =~ "microsoftoffice365" ]]; then
+         echo "Status: adding Microsoft Office to the Dock" >> $DEPLOG
+         echo "removing Microsoft Office from the Dock"
+          /usr/local/bin/dockutil --remove "Microsoft Word" --allhomes --no-restart
+          sleep .5
+          /usr/local/bin/dockutil --remove "Microsoft Excel" --allhomes --no-restart
+          sleep .5
+          /usr/local/bin/dockutil --remove "Microsoft Powerpoint" --allhomes --no-restart
+          sleep .5
+          /usr/local/bin/dockutil --remove "Microsoft Outlook" --allhomes --no-restart
+         sleep .5
+         echo "adding Microsoft Office to the Dock"
+         sleep .5
+         /usr/local/bin/dockutil --add /Applications/Microsoft\ Word.app --position 6 --allhomes --no-restart
+         sleep .5
+         /usr/local/bin/dockutil --add /Applications/Microsoft\ Excel.app --position 7 --allhomes --no-restart
+         sleep .5
+         /usr/local/bin/dockutil --add /Applications/Microsoft\ Powerpoint.app --position 8 --allhomes --no-restart
+         sleep .5
+         /usr/local/bin/dockutil --add /Applications/Microsoft\ Outlook.app --position 9 --allhomes --no-restart
+         sleep .5
+     else
+        echo "Status: adding $APPNA to the Dock" >> $DEPLOG
+        echo "removing $APPNA from the Dock"
+        /usr/local/bin/dockutil --remove "$APPNA" --allhomes --no-restart
+        sleep .5
+        echo "adding $APPNA to the Dock"
+        /usr/local/bin/dockutil --add "$APPPA/$APPNA.app" --position $DOCKPOS --allhomes --no-restart
+        sleep .5
+   fi
+
 # ********************************************************************************************************************************
 # END EXECUTION
 # ********************************************************************************************************************************
