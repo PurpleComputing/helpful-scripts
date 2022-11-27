@@ -174,6 +174,21 @@ if [[ " $@ " =~ "monday" ]]; then
     APPPA="/Applications"
     
 fi
+if [[ " $@ " =~ "filemaker15" ]]; then
+    APPNA="FileMaker Pro"
+    APPPA="/Applications/FileMaker Pro 15"
+    
+fi
+if [[ " $@ " =~ "excellcloudvoice" ]]; then
+    APPNA="Excell Cloud Voice Plus"
+    APPPA="/Applications"
+    
+fi
+if [[ " $@ " =~ "accountedgene" ]]; then
+    APPNA="AccountEdge NE"
+    APPPA="/Applications"
+    
+fi
 # ********************************************************************************************************************************
 # END APP LABELS
 # ********************************************************************************************************************************
@@ -182,7 +197,7 @@ fi
 
 # MOSYLE SELF SERVICE
 if [[ " $@ " =~ "mosyless" ]]; then
-    APPNA="Self-Service"
+    APPNA='Self-Service'
     APPPA="/Applications"    
     DOCKPOS=2
 fi
