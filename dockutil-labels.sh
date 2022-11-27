@@ -147,6 +147,11 @@ if [[ " $@ " =~ "1password7" ]]; then
     APPPA="/Applications"
     
 fi
+if [[ " $@ " =~ "filemakerpro" ]]; then
+    APPNA="FileMaker Pro"
+    APPPA="/Applications"
+    
+fi
 # NOT KNOWN TO INSTALLOMATOR - USE FOR DOCK POPULATION ONLY
 
 if [[ " $@ " =~ "zywallsecuextender" ]]; then
