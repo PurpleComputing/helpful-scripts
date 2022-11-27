@@ -152,6 +152,21 @@ if [[ " $@ " =~ "filemakerpro" ]]; then
     APPPA="/Applications"
     
 fi
+if [[ " $@ " =~ "keka" ]]; then
+    APPNA="Keka"
+    APPPA="/Applications"
+    
+fi
+if [[ " $@ " =~ "icons" ]]; then
+    APPNA="Icons"
+    APPPA="/Applications"
+    
+fi
+if [[ " $@ " =~ "cyberduck" ]]; then
+    APPNA="Cyberduck"
+    APPPA="/Applications"
+    
+fi
 # NOT KNOWN TO INSTALLOMATOR - USE FOR DOCK POPULATION ONLY
 
 if [[ " $@ " =~ "zywallsecuextender" ]]; then
