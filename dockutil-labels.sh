@@ -240,8 +240,9 @@ fi
 # EXECUTE TASK
 # ********************************************************************************************************************************
    if [[ " $@ " =~ "microsoftoffice365" ]]; then
-         echo "Status: adding Microsoft Office to the Dock" >> $DEPLOG
-         echo "removing Microsoft Office from the Dock"
+         APPNA="Microsoft Office"
+         echo "Status: adding $APPNA to the Dock" >> $DEPLOG
+         echo "removing $APPNA from the Dock"
           /usr/local/bin/dockutil --remove "Microsoft Word" --allhomes --no-restart
           sleep .5
           /usr/local/bin/dockutil --remove "Microsoft Excel" --allhomes --no-restart
