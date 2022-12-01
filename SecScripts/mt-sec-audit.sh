@@ -20,7 +20,7 @@ brew install git
 
 git clone https://github.com/CISOfy/lynis
 cd lynis
-./lynis audit system -Q --auditor="$AUDITORNAME" >> $REPORTOUTPUT
+./lynis audit system -Q --auditor "$AUDITORNAME" >> $REPORTOUTPUT
 
 chmod 777 /var/log/lynis-report.dat
 chmod 777 $REPORTOUTPUT
