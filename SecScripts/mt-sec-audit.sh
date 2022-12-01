@@ -19,4 +19,7 @@ brew install git
 
 git clone https://github.com/CISOfy/lynis
 cd lynis
-./lynis audit system -Q
+./lynis audit system -Q --auditor="$AUDITORNAME" >> /Users/$(stat -f "%Su" /dev/console)/Desktop/MacReport.rtf
+
+chmod 777 /var/log/lynis-report.dat
+
