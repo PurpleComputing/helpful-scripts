@@ -24,7 +24,7 @@ git clone https://github.com/CISOfy/lynis
 cd lynis
 sudo ./lynis audit system -Q --auditor "$AUDITORNAME" >> $REPORTOUTPUT
 sudo ./lynis audit system --pentest --auditor "$AUDITORNAME" >> $REPORTOUTPUT
-chmod 777 /var/log/lynis-report.dat
-chmod 777 $REPORTOUTPUT
+sudo chmod 777 /var/log/lynis-report.dat
+sudo chmod 777 $REPORTOUTPUT
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/SecScripts/test-lockdown.sh)"
 
