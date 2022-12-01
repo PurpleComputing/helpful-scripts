@@ -5,7 +5,7 @@ AUDITORNAME="Michael Tanner"
 REPORTFILE="report.log"
 LOGFILE="audit.log"
 LOGDIR="/tmp/PurpleAudit/Log"
-REPORTOUTPUT=/Users/$(stat -f "%Su" /dev/console)/Desktop/MacReport.rtf
+REPORTOUTPUT=/Users/$(stat -f "%Su" /dev/console)/Desktop/MacReport.txt
 
 export AUDITORNAME LOGDIR LOGFILE REPORTFILE
 
