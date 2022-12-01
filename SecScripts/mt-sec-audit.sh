@@ -8,9 +8,10 @@ LOGDIR="/tmp/PurpleAudit/Log"
 REPORTOUTPUT=/Users/$(stat -f "%Su" /dev/console)/Desktop/MacReport.txt
 
 rm -f $REPORTOUTPUT
+rm -rf /tmp/PurpleAudit
 export AUDITORNAME LOGDIR LOGFILE REPORTFILE
 
-mkdir -p /tmp/PurpleAudit
+mkdir /tmp/PurpleAudit
 mkdir -p /tmp/PurpleAudit/Log
 
 cd /tmp/PurpleAudit
@@ -18,7 +19,7 @@ cd /tmp/PurpleAudit
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install git
-brew install python@3.8
+brew install python3
 
 git clone https://github.com/CISOfy/lynis
 cd lynis
@@ -28,3 +29,4 @@ sudo chmod 777 /var/log/lynis-report.dat
 sudo chmod 777 $REPORTOUTPUT
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/SecScripts/test-lockdown.sh)"
 
+rm -rf /tmp/PurpleAudit
