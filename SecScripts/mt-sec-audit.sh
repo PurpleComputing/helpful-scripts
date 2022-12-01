@@ -26,7 +26,7 @@ cd lynis
 sudo ./lynis audit system -Q --auditor "$AUDITORNAME" >> $REPORTOUTPUT
 sudo ./lynis audit system --pentest --auditor "$AUDITORNAME" >> $REPORTOUTPUT
 
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/SecScripts/test-lockdown.sh)"  >> $REPORTOUTPUT
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/SecScripts/test-lockdown.sh)" bash audit >> $REPORTOUTPUT
 
 sudo chmod 777 /var/log/lynis-report.dat
 sudo chmod 777 $REPORTOUTPUT
