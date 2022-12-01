@@ -5,6 +5,7 @@ AUDITORNAME="Michael Tanner"
 REPORTFILE="report.log"
 LOGFILE="audit.log"
 LOGDIR="/tmp/PurpleAudit/Log"
+REPORTOUTPUT=/Users/$(stat -f "%Su" /dev/console)/Desktop/MacReport.rtf
 
 export AUDITORNAME LOGDIR LOGFILE REPORTFILE
 
@@ -19,7 +20,7 @@ brew install git
 
 git clone https://github.com/CISOfy/lynis
 cd lynis
-./lynis audit system -Q --auditor="$AUDITORNAME" >> /Users/$(stat -f "%Su" /dev/console)/Desktop/MacReport.rtf
+./lynis audit system -Q --auditor="$AUDITORNAME" >> $REPORTOUTPUT
 
 chmod 777 /var/log/lynis-report.dat
-
+chmod 777 $REPORTOUTPUT
