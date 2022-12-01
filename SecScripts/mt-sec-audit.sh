@@ -7,8 +7,8 @@ LOGFILE="audit.log"
 LOGDIR="/tmp/PurpleAudit/Log"
 REPORTOUTPUT=/Users/$(stat -f "%Su" /dev/console)/Desktop/MacReport.txt
 
-rm -f $REPORTOUTPUT
-rm -rf /tmp/PurpleAudit
+sudo rm -f $REPORTOUTPUT
+sudo rm -rf /tmp/PurpleAudit
 export AUDITORNAME LOGDIR LOGFILE REPORTFILE
 
 mkdir /tmp/PurpleAudit
