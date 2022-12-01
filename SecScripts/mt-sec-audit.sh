@@ -24,3 +24,4 @@ cd lynis
 
 chmod 777 /var/log/lynis-report.dat
 chmod 777 $REPORTOUTPUT
+
