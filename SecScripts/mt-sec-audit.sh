@@ -16,11 +16,6 @@ mkdir -p /tmp/PurpleAudit/Log
 
 cd /tmp/PurpleAudit
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-brew install git
-brew install python3
-
 git clone https://github.com/CISOfy/lynis
 cd lynis
 sudo ./lynis audit system -Q --auditor "$AUDITORNAME" >> $REPORTOUTPUT
