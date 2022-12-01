@@ -60,31 +60,6 @@ function usage {
 # version
 
 
-function macos_compatability_check {
-
-  # Check if running on a Mac
-  # Check if the Mac is running the supoorted version of macOS 
-
-  local -r supported_macos_version="13.0"
-  local os
-  local current_macos_version
-
-  os="$(/usr/bin/uname -s)"
-
-  if [[ "${os}" != "Darwin" ]]; then 
-	echo "[❌] Lockdown was built for macOS"
-	exit 1
-  fi
-
-  current_macos_version="$(/usr/bin/sw_vers -productVersion | /usr/bin/awk -F '.' '{print $1 "." $2}')";
-
-  if [ "${current_macos_version}" != "${supported_macos_version}" ]; then 
-	echo "[❌] Lockdown was built for macOS ${supported_macos_version}.x"
-	echo "[🍺] This is macOS ${current_macos_version}"
-	exit 1
-  fi
-}
-
 
 function audit {
 
@@ -733,7 +708,6 @@ function check_if_standard_user {
 function main {
 
   # Verify Lockdown signature 
-  macos_compatability_check
   # Check the system is running the supoorted version of macOS 
 
   declare -r cmd=${1:-"usage"}
