@@ -1,4 +1,5 @@
 DEPLOG=/var/tmp/depnotify.log
+echo *** DOCKUTIL LABELS AS USER ***
 
 currentUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
 uid=$(id -u "$currentUser")
