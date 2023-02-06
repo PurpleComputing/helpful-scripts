@@ -6,6 +6,7 @@ uid=$(id -u "$currentUser")
 runAsUser() {  
   if [ "$currentUser" != "loginwindow" ]; then
 	launchctl asuser "$uid" sudo -u "$currentUser" "$@"
+	echo logged in user is $( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
   else
 	echo "no user logged in"
 	exit 1
