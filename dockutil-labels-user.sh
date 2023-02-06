@@ -262,31 +262,31 @@ fi
 		 APPNA="Microsoft Office"
 		 echo "Status: adding $APPNA to the Dock" >> $DEPLOG
 		 echo "removing $APPNA from the Dock"
-		  runAsUser /usr/local/bin/dockutil --remove "Microsoft Word" --no-restart --homeloc /Users/$currentUser/
+		  runAsUser /usr/local/bin/dockutil --remove "Microsoft Word" --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		  sleep .5
-		  runAsUser /usr/local/bin/dockutil --remove "Microsoft Excel" --no-restart --homeloc /Users/$currentUser/
+		  runAsUser /usr/local/bin/dockutil --remove "Microsoft Excel" --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		  sleep .5
-		  runAsUser /usr/local/bin/dockutil --remove "Microsoft Powerpoint" --no-restart --homeloc /Users/$currentUser/
+		  runAsUser /usr/local/bin/dockutil --remove "Microsoft Powerpoint" --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		  sleep .5
-		  runAsUser /usr/local/bin/dockutil --remove "Microsoft Outlook" --no-restart --homeloc /Users/$currentUser/
+		  runAsUser /usr/local/bin/dockutil --remove "Microsoft Outlook" --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		 sleep .5
 		 echo "adding Microsoft Office to the Dock"
 		 sleep .5
-		 runAsUser /usr/local/bin/dockutil --add /Applications/Microsoft\ Word.app --position 6 --no-restart --homeloc /Users/$currentUser/
+		 runAsUser /usr/local/bin/dockutil --add /Applications/Microsoft\ Word.app --position 6 --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		 sleep .5
-		 runAsUser /usr/local/bin/dockutil --add /Applications/Microsoft\ Excel.app --position 7 --no-restart --homeloc /Users/$currentUser/
+		 runAsUser /usr/local/bin/dockutil --add /Applications/Microsoft\ Excel.app --position 7 --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		 sleep .5
-		 runAsUser /usr/local/bin/dockutil --add /Applications/Microsoft\ Powerpoint.app --position 8 --no-restart --homeloc /Users/$currentUser/
+		 runAsUser /usr/local/bin/dockutil --add /Applications/Microsoft\ Powerpoint.app --position 8 --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		 sleep .5
-		 runAsUser /usr/local/bin/dockutil --add /Applications/Microsoft\ Outlook.app --position 9 --no-restart --homeloc /Users/$currentUser/
+		 runAsUser /usr/local/bin/dockutil --add /Applications/Microsoft\ Outlook.app --position 9 --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		 sleep .5
 	 else
 		echo "Status: adding $APPNA to the Dock" >> $DEPLOG
 		echo "removing $APPNA from the Dock"
-		runAsUser /usr/local/bin/dockutil --remove "$APPNA" --no-restart --homeloc /Users/$currentUser/
+		runAsUser /usr/local/bin/dockutil --remove "$APPNA" --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		sleep .5
 		echo "adding $APPNA to the Dock"
-		runAsUser /usr/local/bin/dockutil --add "$APPPA/$APPNA.app" --position $DOCKPOS   --no-restart --homeloc /Users/$currentUser/
+		runAsUser /usr/local/bin/dockutil --add "$APPPA/$APPNA.app" --position $DOCKPOS --no-restart --homeloc /Users/$(stat -f "%Su" /dev/console)/
 		sleep .5
    fi
 
