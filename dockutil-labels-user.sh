@@ -117,6 +117,11 @@ if [[ " $@ " =~ "acrobatdc" ]]; then
 	APPPA="/Applications/Adobe Acrobat DC"
 	
 fi
+if [[ " $@ " =~ "adobereaderdc" ]]; then
+    APPNA="Adobe Acrobat Reader"
+    APPPA="/Applications"
+    
+fi
 if [[ " $@ " =~ "adobecreativeclouddesktop" ]]; then
 	APPNA="Creative Cloud"
 	APPPA="/Applications/Utilities/Adobe Creative Cloud/ACC"
