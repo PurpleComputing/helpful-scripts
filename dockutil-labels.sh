@@ -137,6 +137,11 @@ if [[ " $@ " =~ "adobecreativeclouddesktop" ]]; then
 
 fi
 #OTHERS
+if [[ " $@ " =~ "console" ]]; then
+	APPNA="Console"
+	APPPA="/Applications/Utilities"
+
+fi
 if [[ " $@ " =~ "activitymonitor" ]]; then
 	APPNA="Activity Monitor"
 	APPPA="/Applications/Utilities"
