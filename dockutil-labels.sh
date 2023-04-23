@@ -331,9 +331,9 @@ fi
 # ********************************************************************************************************************************
 
 # ERROR RESPONSES
-if [[ " $@ " =~ '' ]]; then
-	# whatever you want to do when array contains value
-	echo No Label Provided
-fi
+# if [[ " $@ " =~ '' ]]; then
+# 	# whatever you want to do when array contains value
+# 	echo No Label Provided
+# fi
 
 echo "*** END dockutil-labels.sh ***"
