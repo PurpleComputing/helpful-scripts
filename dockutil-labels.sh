@@ -217,6 +217,11 @@ if [[ " $@ " =~ "cyberduck" ]]; then
 	APPPA="/Applications"
 
 fi
+if [[ " $@ " =~ "asana" ]]; then
+	APPNA="Asana"
+	APPPA="/Applications"
+
+fi
 # NOT KNOWN TO INSTALLOMATOR - USE FOR DOCK POPULATION ONLY
 
 if [[ " $@ " =~ "zywallsecuextender" ]]; then
