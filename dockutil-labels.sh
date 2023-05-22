@@ -48,6 +48,11 @@ if [[ " $@ " =~ "firefox" ]]; then
 	APPPA="/Applications"
 
 fi
+if [[ " $@ " =~ "brave" ]]; then
+	APPNA="Brave"
+	APPPA="/Applications"
+
+fi
 
 # MICROSOFT OFFICE APPS
 if [[ " $@ " =~ "microsoftword" ]]; then
@@ -266,6 +271,16 @@ if [[ " $@ " =~ "accountedgene" ]]; then
 fi
 if [[ " $@ " =~ "3cx" ]]; then
 	APPNA="3CX Desktop App"
+	APPPA="/Applications"
+
+fi
+if [[ " $@ " =~ "nordlayer" ]]; then
+	APPNA="NordLayer"
+	APPPA="/Applications"
+
+fi
+if [[ " $@ " =~ "nordpass" ]]; then
+	APPNA="NordPass"
 	APPPA="/Applications"
 
 fi
