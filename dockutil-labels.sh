@@ -187,6 +187,11 @@ if [[ " $@ " =~ "teamviewer" ]]; then
 	APPPA="/Applications"
 
 fi
+if [[ " $@ " =~ "teamviewerhost" ]]; then
+	APPNA="TeamViewer Host"
+	APPPA="/Applications"
+
+fi
 if [[ " $@ " =~ "microsoftremotedesktop" ]]; then
 	APPNA="Microsoft Remote Desktop"
 	APPPA="/Applications"
