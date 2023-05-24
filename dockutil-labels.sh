@@ -49,7 +49,7 @@ if [[ " $@ " =~ "firefox" ]]; then
 
 fi
 if [[ " $@ " =~ "brave" ]]; then
-	APPNA="Brave"
+	APPNA="Brave Browser"
 	APPPA="/Applications"
 
 fi
