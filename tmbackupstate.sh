@@ -22,4 +22,4 @@ enabled=$(/usr/bin/defaults read /Library/Preferences/com.apple.TimeMachine Auto
 		TMBACKUPSTATE="Warning"
 	fi
     
-export TMBACKUPSTATE
+echo $TMBACKUPSTATE >> /tmp/TMBACKUPSTATE.check
