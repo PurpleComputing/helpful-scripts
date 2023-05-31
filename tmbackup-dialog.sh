@@ -22,8 +22,8 @@
 # TM-Login-Check.sh SCMv
 # Last Updated by Michael Tanner, 31/05/2023
 ####################################################################################################
-curl -s https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/tmbackupdate.sh?v=123$(date +%s) | bash
-curl -s https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/tmbackupstate.sh?v=123$(date +%s) | bash
+curl -s https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/tmbackupdate.sh | bash
+curl -s https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/tmbackupstate.sh | bash
 
 # CHECKING COMPLIANCE
  if grep -q 'COMPLIANT' /tmp/TMBACKUPSTATE.check;
