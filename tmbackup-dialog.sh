@@ -34,3 +34,5 @@ curl -s https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/t
 
 # LAUNCHING DIALOG
   /usr/local/bin/dialog dialog --title none --message "**Your Mac has not been backed up in a long time.**\n\n Please connect your backup drive as soon as possible! \n\nStatus: \n $(cat "/tmp/TMBACKUPDATE.check")" --alignment centre --centericon --small --ontop --infobuttontext "Request Support" --infobuttonaction "https://purplecomputing.com/support" --icon warning --overlayicon "/System/Applications/Time Machine.app" --blurscreen --quitoninfo --button1text "Okay"
+
+export WARNINGDAYS CRITICALDAYS
