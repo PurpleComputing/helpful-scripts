@@ -1,6 +1,17 @@
 #!/bin/sh
 #WARNINGDAYS=14
 #CRITICALDAYS=30
+
+if [ -z "$WARNINGDAYS" ]
+then
+WARNINGDAYS=14
+fi
+
+if [ -z "$CRITICALDAYS" ]
+then
+CRITICALDAYS=30
+fi
+
 enabled=$(/usr/bin/defaults read /Library/Preferences/com.apple.TimeMachine AutoBackup)
 	if [ "$enabled" == "1" ];then
 		datetoday=$(date +%s)
