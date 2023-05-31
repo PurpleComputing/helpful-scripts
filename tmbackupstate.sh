@@ -21,5 +21,5 @@ enabled=$(/usr/bin/defaults read /Library/Preferences/com.apple.TimeMachine Auto
 	else
 		TMBACKUPSTATE="Warning"
 	fi
-    
+rm -f /tmp/TMBACKUPSTATE.check
 echo $TMBACKUPSTATE >> /tmp/TMBACKUPSTATE.check
