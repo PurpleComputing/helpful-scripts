@@ -75,7 +75,11 @@ if [[ " $@ " =~ "microsoftoutlook" ]]; then
 	APPPA="/Applications"
 
 fi
+if [[ " $@ " =~ "microsoftonenote" ]]; then
+	APPNA="Microsoft OneNote"
+	APPPA="/Applications"
 
+fi
 
 # CLOUD STORAGE APPS
 if [[ " $@ " =~ "dropbox" ]]; then
