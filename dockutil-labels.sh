@@ -361,10 +361,10 @@ fi
 		echo "Status: adding $APPNA to the Dock" >> $DEPLOG
 		echo "removing $APPNA from the Dock"
 		/usr/local/bin/dockutil --remove "$APPNA" --allhomes --no-restart
-		sleep .5
+		sleep .2
 		echo "adding $APPNA to the Dock"
 		/usr/local/bin/dockutil --add "$APPPA/$APPNA.app" --position $DOCKPOS --allhomes --no-restart
-		sleep .5
+		sleep .2
    fi
 
 # ********************************************************************************************************************************
