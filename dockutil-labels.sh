@@ -196,6 +196,16 @@ if [[ " $@ " =~ "teamviewerhost" ]]; then
 	APPPA="/Applications"
 
 fi
+if [[ " $@ " =~ "appleremotedesktop" ]]; then
+	APPNA="Remote Desktop"
+	APPPA="/Applications"
+
+fi
+if [[ " $@ " =~ "screensharing" ]]; then
+	APPNA="Screen Sharing"
+	APPPA="/System/Library/CoreServices/Applications"
+
+fi
 if [[ " $@ " =~ "microsoftremotedesktop" ]]; then
 	APPNA="Microsoft Remote Desktop"
 	APPPA="/Applications"
