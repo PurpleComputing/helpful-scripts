@@ -318,6 +318,13 @@ if [[ " $@ " =~ "systempreferences" ]]; then
 
 fi
 
+# SYSTEM PREFERENCES
+if [[ " $@ " =~ "systemsettings" ]]; then
+	APPNA="System Settings"
+	APPPA="/Applications"
+
+fi
+
 # LAUNCHPAD
 if [[ " $@ " =~ "launchpad" ]]; then
 	APPNA="Launchpad"
