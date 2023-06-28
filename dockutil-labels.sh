@@ -246,6 +246,11 @@ if [[ " $@ " =~ "asana" ]]; then
 	APPPA="/Applications"
 
 fi
+if [[ " $@ " =~ "googledrive" ]]; then
+	APPNA="Google Drive"
+	APPPA="/Applications"
+
+fi
 # NOT KNOWN TO INSTALLOMATOR - USE FOR DOCK POPULATION ONLY
 
 if [[ " $@ " =~ "zywallsecuextender" ]]; then
