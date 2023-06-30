@@ -29,4 +29,4 @@ cd elastic-stack
 
 curl -s https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/install-docker-ubuntu.sh | bash
 
-docker-compose up -d
+#docker-compose up -d
