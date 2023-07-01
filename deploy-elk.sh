@@ -22,7 +22,7 @@ mkdir -p $ELKPATH
 
 cd $ELKPATH
 
-git clone https://github.com/spujadas/elk-docker.git
+git clone git clone https://github.com/sherifabdlnaby/elastdocker.git
 
 
 #curl -s https://raw.githubusercontent.com/PurpleComputing/helpful-scripts/main/install-docker-ubuntu.sh | bash
