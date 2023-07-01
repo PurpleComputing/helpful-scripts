@@ -16,7 +16,7 @@
 # NOTICE: UBUNTU-SPECIFIC SCRIPT, WE RECOMMEND 22.04 LTS
 ###############################################################################################
 ELKPATH=/opt/es/
-hostname elastic-stack
+#hostname elastic-stack
 
 mkdir -p $ELKPATH
 
