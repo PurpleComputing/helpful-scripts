@@ -43,6 +43,11 @@ if [[ " $@ " =~ "googlechrome" ]]; then
 	APPPA="/Applications"
 
 fi
+if [[ " $@ " =~ "googlechromeenterprise" ]]; then
+	APPNA="Google Chrome"
+	APPPA="/Applications"
+
+fi
 if [[ " $@ " =~ "firefox" ]]; then
 	APPNA="Firefox"
 	APPPA="/Applications"
