@@ -256,6 +256,11 @@ if [[ " $@ " =~ "googledrive" ]]; then
 	APPPA="/Applications"
 
 fi
+if [[ " $@ " =~ "ringcentralphone" ]]; then
+	APPNA="RingCentral for Mac"
+	APPPA="/Applications"
+
+fi
 # NOT KNOWN TO INSTALLOMATOR - USE FOR DOCK POPULATION ONLY
 
 if [[ " $@ " =~ "zywallsecuextender" ]]; then
