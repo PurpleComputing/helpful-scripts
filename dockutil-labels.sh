@@ -105,7 +105,7 @@ if [[ " $@ " =~ "slack" ]]; then
 
 fi
 if [[ " $@ " =~ "microsoftteams" ]]; then
-	APPNA="Microsoft Teams"
+	APPNA="Microsoft Teams classic"
 	APPPA="/Applications"
 
 fi
