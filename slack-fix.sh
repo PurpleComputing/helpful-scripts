@@ -14,7 +14,7 @@ apps=(
 )
 
 # Dialog display settings, change as desired
-title="Fixing Broken Slack"
+title="PurplePatch: Fix Slack Script"
 message="Fixing Broken Slack once and for all..."
 
 # location of dialog and dialog command file
