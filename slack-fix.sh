@@ -36,7 +36,7 @@ function dialog_command(){
 }
 
 function finalise(){
-  dialog_command "progresstext: Successfully Joined the $ZTNETNAME Network"
+  dialog_command "progresstext: Patched Slack Successfully!"
   dialog_command "progress: complete"
   dialog_command "button1text: Done"
   dialog_command "button1: enable" 
