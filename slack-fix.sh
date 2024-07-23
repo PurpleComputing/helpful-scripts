@@ -8,9 +8,9 @@ if [ ! -e "/usr/local/bin/dialog" ]; then
 fi
 
 apps=(
-    "RemovingBroken,/tmp/slckremvd.log"
-    "InstallingPatched,/tmp/slckinstalld.log"
-    "Ready to use,/tmp/slckrdy.log"
+    "Removing the broken version...,/tmp/slckremvd.log"
+    "Installing the patched version...,/tmp/slckinstalld.log"
+    "Ready to use!,/tmp/slckrdy.log"
 )
 
 # Dialog display settings, change as desired
