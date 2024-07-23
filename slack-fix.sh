@@ -8,7 +8,7 @@ if [ ! -e "/usr/local/bin/dialog" ]; then
 fi
 
 apps=(
-    "Removing the broken version...,/tmp/slckremvd.log"
+    "Removing the broken version and permissions...,/tmp/slckremvd.log"
     "Installing the patched version...,/tmp/slckinstalld.log"
     "Ready to use!,/tmp/slckrdy.log"
 )
@@ -49,7 +49,7 @@ while [ ! -e "$(echo "$app" | cut -d ',' -f2)" ]
 do
     sleep 2
 done
-dialog_command "progresstext: \"$(echo "$app" | cut -d ',' -f1)\"."
+dialog_command "progresstext: \"$(echo $app | cut -d ',' -f1)\"."
 dialog_command "listitem: $(echo "$app" | cut -d ',' -f1): ✅"
 progress_index=$(( progress_index + 1 ))
 echo "at item number $progress_index"
