@@ -63,9 +63,9 @@ progress_total=${#apps[@]}
 # set icon based on whether computer is a desktop or laptop
 hwType=$(/usr/sbin/system_profiler SPHardwareDataType | grep "Model Identifier" | grep "Book")  
 if [ "$hwType" != "" ]; then
-  icon="SF=laptopcomputer.and.arrow.down,weight=thin,colour1=#51a3ef,colour2=#5154ef"
+  icon="https://store.prpl.uk/slack.png"
   else
-  icon="SF=desktopcomputer.and.arrow.down,weight=thin,colour1=#51a3ef,colour2=#5154ef"
+  icon="https://store.prpl.uk/slack.png"
 fi
 
 dialogCMD="$dialogApp -p --title \"$title\" \
