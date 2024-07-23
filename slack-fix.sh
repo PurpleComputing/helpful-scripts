@@ -69,11 +69,12 @@ if [ "$hwType" != "" ]; then
 fi
 
 dialogCMD="$dialogApp -p --title \"$title\" \
---message \"$message\" \
+--message $message \
 --icon \"$icon\" \
 --progress $progress_total \
 --button1text \"Please Wait\" \
---button1disabled"
+--button1disabled" \
+--moveable
 
 # create the list of apps
 listitems=""
