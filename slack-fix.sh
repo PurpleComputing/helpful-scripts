@@ -73,8 +73,7 @@ dialogCMD="$dialogApp -p --title \"$title\" \
 --icon \"$icon\" \
 --progress $progress_total \
 --button1text \"Please Wait\" \
---button1disabled" \
---moveable
+--button1disabled"
 
 # create the list of apps
 listitems=""
