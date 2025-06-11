@@ -18,11 +18,10 @@ cd fminstaller
 wget https://downloads.claris.com/esd/fms_21.1.5.500_Ubuntu22_amd64.zip
 unzip fms_21.1.5.500_Ubuntu22_amd64.zip
 
-# Identify installation filename
-ls filemaker*.deb
+cd fm*
 
 # Start installation
-sudo apt install ./fms_*.deb
+sudo ./install.sh
 
 # Follow prompts during installation for license, type and admin credentials
 
